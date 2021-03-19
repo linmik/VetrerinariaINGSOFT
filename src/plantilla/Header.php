@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
+
+require('.\database\connection.php');
+
 session_start();
 header("Cache-Control: no-cache, must-revalidate"); // HTTP/1.1
 header("Expires: Sat, 1 Jul 2000 05:00:00 GMT"); // Fecha en el pasado
@@ -9,23 +12,6 @@ ini_set('display_errors', 1);
 ob_start();
 flush(); // Flush the buffer
 ob_flush();
-
-//echo $_SERVER['REQUEST_URI'];
-?>
-<?php
-$servername = "localhost";
-$username = "ninefrmc_root";
-$password = "Samuel20";
-$mydb = "ninefrmc_veterinaria";
-
-try{
-    $conn = new PDO("mysql:host=$servername;dbname=$mydb", $username, $password);
-    // set the PDO error mode to exception
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-//    echo "Connected successfully";
-}catch(PDOException $e){
-    echo "Connection failed: " . $e->getMessage();
-}
 
 if (!empty($_SESSION['id'])){
 

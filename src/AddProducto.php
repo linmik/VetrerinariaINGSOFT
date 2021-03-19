@@ -1,9 +1,6 @@
 <?php
 //Servidor
-$servername = "localhost";
-$username = "ninefrmc_root";
-$password = "Samuel20";
-$mydb = "ninefrmc_veterinaria";
+require('.\database\connection.php');
 
 $sql = "mysql:host=$servername;dbname=$mydb;";
 $dsn_Options = [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION];

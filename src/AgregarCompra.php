@@ -1,9 +1,5 @@
 <?php
-//Servidor
-$servername = "localhost";
-$username = "ninefrmc_root";
-$password = "Samuel20";
-$mydb = "ninefrmc_veterinaria";
+require('.\database\connection.php');
 
 $sql = "mysql:host=$servername;dbname=$mydb;";
 $dsn_Options = [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION];
@@ -24,12 +20,7 @@ if(empty($_POST['id_servicio'])){
 echo "<p>P: $id_producto </p>";
 echo "<p>S: $id_servicio</p>";
 echo "<p></p>";
-try {
-    $my_Db_Connection = new PDO($sql, $username, $password, $dsn_Options);
-    echo "Connected successfully";
-} catch (PDOException $error) {
-    echo 'Connection error: ' . $error->getMessage();
-}
+
 //
 $id_usr = $_SESSION['id'];
 $my_Insert_Statement = $my_Db_Connection->prepare(

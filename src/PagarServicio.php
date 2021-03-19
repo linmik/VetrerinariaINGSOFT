@@ -1,6 +1,6 @@
 
 <?php
-
+include './plantilla/Header.php';
 if($_SERVER['REQUEST_METHOD']=='POST'){
     $costo = $_POST['total'];
 
@@ -18,21 +18,6 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 
     // $contraseña = hash('sha512', $contraseña);
     $errores ='';
-
-    $servername = "localhost";
-    $username = "ninefrmc_root";
-    $passwordb = "Samuel20";
-    $mydb = "ninefrmc_veterinaria";
-
-
-    try{
-        $conn = new PDO("mysql:host=$servername;dbname=$mydb", $username, $passwordb);
-        // set the PDO error mode to exception
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-//    echo "Connected successfully";
-    }catch(PDOException $e){
-        echo "Connection failed: " . $e->getMessage();
-    }
 
     //Administrador
     $cliente = $conn -> prepare(

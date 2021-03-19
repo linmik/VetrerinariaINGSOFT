@@ -1,12 +1,5 @@
-<?php include "./plantilla/Header.php" ?>
-
 <?php
-//Servidor
-$servername = "localhost";
-$username = "ninefrmc_root";
-$password = "Samuel20";
-$mydb = "ninefrmc_veterinaria";
-
+include "./plantilla/Header.php";
 $sql = "mysql:host=$servername;dbname=$mydb;";
 $dsn_Options = [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION];
 //
@@ -18,12 +11,6 @@ if(!empty($_POST['busqueda'])){
     $busqueda = '';
 }
 
-try {
-    $my_Db_Connection = new PDO($sql, $username, $password, $dsn_Options);
-//    echo "Connected successfully";
-} catch (PDOException $error) {
-    echo 'Connection error: ' . $error->getMessage();
-}
 //
 $my_Insert_Statement = $my_Db_Connection->prepare(
     "SELECT * FROM producto WHERE activo = '1'");

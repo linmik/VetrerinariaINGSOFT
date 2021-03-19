@@ -1,19 +1,8 @@
-<?php include './plantilla/Header.php'; ?>
+
 <?php
-$servername = "localhost";
-$username = "ninefrmc_root";
-$password = "Samuel20";
-$mydb = "ninefrmc_veterinaria";
+include './plantilla/Header.php';
 $total = 0;
 
-try{
-    $conn = new PDO("mysql:host=$servername;dbname=$mydb", $username, $password);
-    // set the PDO error mode to exception
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-//    echo "Connected successfully";
-}catch(PDOException $e){
-    echo "Connection failed: " . $e->getMessage();
-}
 $id_usr = $_SESSION['id'];
 $tipo = $_SESSION['tipo'];
 //echo $_SESSION['tipo'];

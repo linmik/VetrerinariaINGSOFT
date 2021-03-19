@@ -1,11 +1,6 @@
-<?php include './plantilla/Header.php'; ?>
 <?php
+include './plantilla/Header.php';
 $id_servicio = $_POST['id_servicio'];
-//Servidor
-$servername = "localhost";
-$username = "ninefrmc_root";
-$password = "Samuel20";
-$mydb = "ninefrmc_veterinaria";
 
 $sql = "mysql:host=$servername;dbname=$mydb;";
 $dsn_Options = [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION];

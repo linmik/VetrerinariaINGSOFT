@@ -1,27 +1,14 @@
 <?php
-$servername = "localhost";
-$username = "ninefrmc_root";
-$password = "Samuel20";
-$mydb = "ninefrmc_veterinaria";
+include './plantilla/Header.php';
+$id_producto = $_GET['id'];
 
-try{
-    $conn = new PDO("mysql:host=$servername;dbname=$mydb", $username, $password);
-    // set the PDO error mode to exception
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-//    echo "Connected successfully";
-}catch(PDOException $e){
-    echo "Connection failed: " . $e->getMessage();
-}
-
-$id_servicio = $_GET['id'];
-
-$servicio = $conn -> prepare("
-	SELECT * FROM servicio WHERE id_servicio = $id_servicio AND activo = '1'");
+$producto = $conn -> prepare("
+	SELECT * FROM producto WHERE id_producto = $id_producto AND activo = '1'");
 //Libro
-$servicio ->execute();
-$servicio = $servicio ->fetchAll();
+$producto ->execute();
+$producto = $producto ->fetchAll();
 
-if(!$servicio){
+if(!$producto){
     $mensaje .= 'Libro inexistente';
 }
 
@@ -30,12 +17,12 @@ if(!$servicio){
 
 <section class="main">
     <div class="container">
-        <?php foreach ($servicio as $Sql): ?>
+        <?php foreach ($producto as $Sql): ?>
             <div class="parallax-container">
                 <?php
                 $imagen = $Sql['imagen'];
                 Echo "<div class=\"parallax\">
-                    <img class=\"materialboxed\" src=\"upload/servicios/$imagen \">
+                    <img class=\"materialboxed\" src=\"upload/productos/$imagen \">
                     </div>";
                 ?>
             </div>
@@ -44,11 +31,11 @@ if(!$servicio){
                 <?php
                 if(!empty($_SESSION['tipo'])){
                     if($_SESSION['tipo']=="Administrador"){
-                        $id = $Sql['id_servicio'];
+                        $id = $Sql['id_producto'];
                         ECHO "
-                <form action=\"EditarServicio.php\" method=\"post\" id=\"EditarServicio\">
-                        <td><input type=\"hidden\" name=\"id_servicio\" value=\"$id\" type=\"text\"></td>
-                    <button class=\"waves-effect waves-light btn-small yellow\" type=\"submit\" form=\"EditarServicio\" value=\"Submit\"><i class=\"material-icons\">edit</i>Editar servicio.</button>
+                <form action=\"EditarProducto.php\" method=\"post\" id=\"EditarProducto\">
+                        <td><input type=\"hidden\" name=\"id_producto\" value=\"$id\" type=\"text\"></td>
+                    <button class=\"waves-effect waves-light btn-small yellow\" type=\"submit\" form=\"EditarProducto\" value=\"Submit\"><i class=\"material-icons\">edit</i>Editar producto.</button>
                 </form>";
                     }
 
@@ -61,19 +48,18 @@ if(!$servicio){
             <div class="col s6 right">
                 <?php
                 if(!empty($_SESSION['id'])){
-                    $id = $Sql['id_servicio'];
+                    $id = $Sql['id_producto'];
                     ECHO "
-                    <form action=\"GenerarCita.php\" method=\"post\" id=\"mainform\">
-                        <td><input type=\"hidden\" name=\"id_servicio\" value=\"$id\" type=\"text\"></td>
-                    <button class=\"waves-effect waves-light btn-small red\" type=\"submit\" form=\"mainform\" value=\"Submit\"><i class=\"material-icons left\">local_hospital
-</i>Generar cita</button>
+                    <form action=\"AgregarCompra.php\" method=\"post\" id=\"mainform\">
+                        <td><input type=\"hidden\" name=\"id_producto\" value=\"$id\" type=\"text\"></td>
+                    <button class=\"waves-effect waves-light btn-small green\" type=\"submit\" form=\"mainform\" value=\"Submit\"><i class=\"material-icons left\">add_shopping_cart</i>Agregar al carrito</button>
                 </form>
                     ";
                 }else{
                     ECHO "
-                    <form action=\"GenerarCita.php\" method=\"post\" id=\"mainform\">
-                        <td><input type=\"hidden\" name=\"id_servicio\" value=\"\" type=\"text\"></td>
-                    <button class=\"waves-effect waves-light btn-small green disabled\" type=\"submit\" form=\"mainform\" value=\"Submit\"><i class=\"material-icons left\">local_hospital</i>INCIA SESIÓN PARA PODER COMPRAR</button>
+                    <form action=\"AgregarCompra.php\" method=\"post\" id=\"mainform\">
+                        <td><input type=\"hidden\" name=\"id_producto\" value=\"\" type=\"text\"></td>
+                    <button class=\"waves-effect waves-light btn-small green disabled\" type=\"submit\" form=\"mainform\" value=\"Submit\"><i class=\"material-icons left\">add_shopping_cart</i>INCIA SESIÓN PARA PODER COMPRAR</button>
                 </form>
                     ";
                 }
@@ -97,14 +83,21 @@ if(!$servicio){
                 </tr>
             </table>
             <div class="row ">
-                <div class="col s6 m6">
+                <div class="col s4 m4">
                     <div class="center promo promo-example">
                         <i class="material-icons">attach_money</i>
                         <p class="promo-caption">Costo:</p>
                         <p class="light center">$<?php echo "<td>". $Sql['costo']. "</td>"; ?></p>
                     </div>
                 </div>
-                <div class="col s6 m6">
+                <div class="col s4 m4">
+                    <div class="center promo promo-example">
+                        <i class="material-icons">dashboard</i>
+                        <p class="promo-caption">En almacen:</p>
+                        <p class="light center"><?php echo "<td>". $Sql['stock']. "</td>"; ?></p>
+                    </div>
+                </div>
+                <div class="col s4 m4">
                     <div class="center promo promo-example">
                         <i class="material-icons">code</i>
                         <p class="promo-caption">Codigo:</p>

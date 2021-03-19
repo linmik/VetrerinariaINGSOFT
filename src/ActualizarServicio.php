@@ -1,6 +1,6 @@
 
 <?php
-
+require('.\database\connection.php');
 if($_SERVER['REQUEST_METHOD']=='POST') {
     //POST
     $nombre_servicio = $_POST['nombre_servicio'];
@@ -21,20 +21,6 @@ if($_SERVER['REQUEST_METHOD']=='POST') {
     $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
     // $contraseña = hash('sha512', $contraseña);
-
-    $servername = "localhost";
-    $username = "ninefrmc_root";
-    $passwordb = "Samuel20";
-    $mydb = "ninefrmc_veterinaria";
-
-    try {
-        $conn = new PDO("mysql:host=$servername;dbname=$mydb", $username, $passwordb);
-        // set the PDO error mode to exception
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-//    echo "Connected successfully";
-    } catch (PDOException $e) {
-        echo "Connection failed: " . $e->getMessage();
-    }
 
     if (empty($tmpName)) {
         $update = $conn->prepare("UPDATE servicio SET nombre = '$nombre_servicio',
