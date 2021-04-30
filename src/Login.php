@@ -1,5 +1,6 @@
 <?php session_start();
 // include './plantilla/Header.php';
+require('.\database\connection.php');
 
 if (isset($_SESSION['correo'])){
     header('Location: index.php');
