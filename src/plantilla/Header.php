@@ -2,7 +2,7 @@
 <html lang="en">
 <?php
 
-require('.\database\connection.php');
+require('C:\laragon\www\VetrerinariaINGSOFT\src\database\connection.php');
 
 session_start();
 header("Cache-Control: no-cache, must-revalidate"); // HTTP/1.1
@@ -38,7 +38,7 @@ else{
 <head>
     <meta charset="UTF-8">
     <title>Veterinaria</title>
-    <link rel="stylesheet" href="css/materialize.css">
+    <link rel="stylesheet" href="http://vetrerinariaingsoft.test/src/css/materialize.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!--    <link rel="stylesheet" href="CSS/Estilos.css">-->
@@ -84,7 +84,7 @@ else{
         ";
             }
         }else{
-            Echo "<li><a href=\"RegistroCliente.php\" title=\"Nuevo cliente\"><i class=\"material-icons\">assignment_ind</i>Nuevo cliente</span></div></a></li>
+            Echo "<li><a href=\"views/clients/AddClient.php\" title=\"Nuevo cliente\"><i class=\"material-icons\">assignment_ind</i>Nuevo cliente</span></div></a></li>
         ";
         }
 

@@ -31,10 +31,7 @@ if(!$servicio){
                 if(!empty($_SESSION['tipo'])){
                     if($_SESSION['tipo']=="Administrador"){
                         $id = $Sql['id_servicio'];
-                        ECHO "
-                <form action=\"EditarServicio.php\" method=\"post\" id=\"EditarServicio\">
-                        <td><input type=\"hidden\" name=\"id_servicio\" value=\"$id\" type=\"text\"></td>
-                    <button class=\"waves-effect waves-light btn-small yellow\" type=\"submit\" form=\"EditarServicio\" value=\"Submit\"><i class=\"material-icons\">edit</i>Editar servicio.</button>
+                        ECHO ">edit</i>Editar servicio.</button>
                 </form>";
                     }
 

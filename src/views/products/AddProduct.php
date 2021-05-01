@@ -7,7 +7,7 @@
             </div>
         </div>
     </div>
-    <form action="controllers/product/AddProduct.php" method="post" name="AddProducto" enctype="multipart/form-data">
+    <form action="../../controllers/products/AddProduct.php" method="post" name="AddProducto" enctype="multipart/form-data">
         <table width="500" border="0" cellpadding="5" cellspacing="5">
             <tr>
                 <th>Nombre del producto:</th>

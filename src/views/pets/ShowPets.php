@@ -31,7 +31,7 @@ $mascotas = $mascotas ->fetchAll();
             </div>
         </div>
     </div>
-    <form action="AgregarMascota.php" method="post" id="mainform">
+    <form action="AddPet.php" method="post" id="mainform">
         <td><input type="hidden" name="id_cliente" value="<?php echo  $id_usr; ?>" type="text"></td>
         <button class="waves-effect waves-light btn-small green" type="submit" form="mainform" value="Submit"><i class="material-icons left">pets
             </i>Agregar</button>

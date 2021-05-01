@@ -28,7 +28,7 @@ $Servicios = $Servicios ->fetchAll();
             </div>
         </div>
     </div>
-    <form action="controllers/service/UpdateService.php" method="post" name="mainform" enctype="multipart/form-data">
+    <form action="../../controllers/services/UpdateService.php" method="post" name="mainform" enctype="multipart/form-data">
         <?php
         foreach ($Servicios as $VServicios):
         ?>

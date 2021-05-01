@@ -32,10 +32,7 @@ if(!$producto){
                 if(!empty($_SESSION['tipo'])){
                     if($_SESSION['tipo']=="Administrador"){
                         $id = $Sql['id_producto'];
-                        ECHO "
-                <form action=\"EditarProducto.php\" method=\"post\" id=\"EditarProducto\">
-                        <td><input type=\"hidden\" name=\"id_producto\" value=\"$id\" type=\"text\"></td>
-                    <button class=\"waves-effect waves-light btn-small yellow\" type=\"submit\" form=\"EditarProducto\" value=\"Submit\"><i class=\"material-icons\">edit</i>Editar producto.</button>
+                        ECHO ">edit</i>Editar producto.</button>
                 </form>";
                     }
 
@@ -49,10 +46,7 @@ if(!$producto){
                 <?php
                 if(!empty($_SESSION['id'])){
                     $id = $Sql['id_producto'];
-                    ECHO "
-                    <form action=\"AgregarCompra.php\" method=\"post\" id=\"mainform\">
-                        <td><input type=\"hidden\" name=\"id_producto\" value=\"$id\" type=\"text\"></td>
-                    <button class=\"waves-effect waves-light btn-small green\" type=\"submit\" form=\"mainform\" value=\"Submit\"><i class=\"material-icons left\">add_shopping_cart</i>Agregar al carrito</button>
+                    ECHO ">add_shopping_cart</i>Agregar al carrito</button>
                 </form>
                     ";
                 }else{

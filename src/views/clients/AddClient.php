@@ -1,4 +1,4 @@
-<?php include './plantilla/Header.php'; ?>
+<?php include '../../plantilla/Header.php'; ?>
 <div class="container">
 
     <div class="col s12 m6">
@@ -8,7 +8,7 @@
             </div>
         </div>
     </div>
-    <form action="RegisterCliente.php" method="post" name="NuevoUsuario" enctype="multipart/form-data" id="NuevoUsuario">
+    <form action="../../controllers/clients/RegisterCliente.php" method="post" name="NuevoUsuario" enctype="multipart/form-data" id="NuevoUsuario">
         <table width="500" border="0" cellpadding="5" cellspacing="5">
             <tr>
                 <th>Nombre del cliente:</th>
@@ -64,14 +64,14 @@
                 <td><input name="metodo_de_pago" type="text"></td>
             </tr>
         </table>
-        <form action="RegisterCliente.php" method="post" id="NuevoUsuario">
+
+        <form action="../../controllers/clients/RegisterCliente.php" method="post" id="NuevoUsuario">
             <button class="waves-effect waves-light btn-small blue right" type="submit" form="NuevoUsuario" value="Submit"><i class="material-icons left">account_box</i>Registrarse</button>
             <button class="waves-effect waves-light btn-small red" type="reset" form="NuevoUsuario" value="Submit"><i class="material-icons right">delete</i>Limpiar formulario</button>
         </form>
-
     </form>
 
 </div>
-<?php include './plantilla/PieDePagina.php'; ?>
+<?php include '../../plantilla/PieDePagina.php'; ?>
 </body>
 </html>

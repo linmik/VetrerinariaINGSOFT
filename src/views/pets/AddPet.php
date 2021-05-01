@@ -13,7 +13,7 @@ $id_usr = $_POST['id_cliente'];
             </div>
         </div>
     </div>
-    <form action="controllers/pet/AddPet.php" method="post" name="AddMascota" enctype="multipart/form-data" id="AddMascota">
+    <form action="../../controllers/pet/AddPet.php" method="post" name="AddMascota" enctype="multipart/form-data" id="AddMascota">
         <table width="500" border="0" cellpadding="5" cellspacing="5">
             <tr>
                 <input type="hidden" name="id_cliente" value="<?php echo  $id_usr; ?>" type="text">
@@ -69,7 +69,7 @@ $id_usr = $_POST['id_cliente'];
             </tr>
 
         </table>
-        <form action="controllers/pet/AddPet.php" method="post" id="AddMascota">
+        <form action="../../controllers/pet/AddPet.php" method="post" id="AddMascota">
             <button class="waves-effect waves-light btn-small green right" type="submit" form="AddMascota" value="Submit"><i class="material-icons left">pets</i>Registrarse</button>
             <button class="waves-effect waves-light btn-small red" type="reset" form="AddMascota" value="Submit"><i class="material-icons right">delete</i>Limpiar formulario</button>
         </form>

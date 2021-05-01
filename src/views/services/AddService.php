@@ -7,7 +7,7 @@
             </div>
         </div>
     </div>
-    <form action="controllers/service/AddService.php" method="post" name="AddServicio" enctype="multipart/form-data">
+    <form action="../../controllers/services/AddService.php" method="post" name="AddServicio" enctype="multipart/form-data">
         <table width="500" border="0" cellpadding="5" cellspacing="5">
             <tr>
                 <th>Nombre del servicio:</th>
