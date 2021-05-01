@@ -73,6 +73,6 @@ codigo = '$codigo', descripcion = '$descripcion', costo = '$costo', stock = '$st
 ?>
 
 <script>
-    alert("PRODUCTO ACTUALIZADO.");
+    alert("PRODUCTO F.");
     window.location.replace("Index.php");
 </script>

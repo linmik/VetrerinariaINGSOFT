@@ -3,34 +3,30 @@
     <div class="col s12 m6">
         <div class="card blue-grey darken-1">
             <div class="card-content white-text blue">
-                <span class="card-title" align='center'>AGREGAR PRODUCTO</span>
+                <span class="card-title" align='center'>AGREGAR SERVICIO</span>
             </div>
         </div>
     </div>
-    <form action="AddProducto.php" method="post" name="AddProducto" enctype="multipart/form-data">
+    <form action="controllers/service/AddService.php" method="post" name="AddServicio" enctype="multipart/form-data">
         <table width="500" border="0" cellpadding="5" cellspacing="5">
             <tr>
-                <th>Nombre del producto:</th>
-                <td><input name="nombre_producto" type="text"></td>
+                <th>Nombre del servicio:</th>
+                <td><input name="nombre_servicio" type="text"></td>
             </tr>
             <tr>
-                <th>Codigo del producto:</th>
+                <th>Codigo del servicio:</th>
                 <td><input name="codigo" type="text"></td>
             </tr>
             <tr>
-                <th>Descripcion del producto:</th>
+                <th>Descripcion del servicio:</th>
                 <td><input name="descripcion" type="text"></td>
             </tr>
             <tr>
-                <th>Costo del producto:</th>
+                <th>Costo del servicio:</th>
                 <td><input name="costo" type="number"></td>
             </tr>
             <tr>
-                <th>Cantidad en el almacen:</th>
-                <td><input name="stock" type="text"></td>
-            </tr>
-            <tr>
-                <th>Imagen del producto:</th>
+                <th>Imagen del servicio:</th>
                 <td><input name="attachment" type="file"></td>
             </tr>
             <tr>

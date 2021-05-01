@@ -21,7 +21,7 @@ $Productos = $Productos ->fetchAll();
             </div>
         </div>
     </div>
-    <form action="ActualizarProducto.php" method="post" name="mainform" enctype="multipart/form-data">
+    <form action="controllers/product/UpdateProduct.php" method="post" name="mainform" enctype="multipart/form-data">
         <?php
         foreach ($Productos as $VProductos):
         ?>
